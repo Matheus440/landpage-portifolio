@@ -1,5 +1,4 @@
 
-
 const myObserver = new IntersectionObserver((entreies) =>{
     entreies.forEach((entry) => {
         if(entry.isIntersecting){
@@ -15,3 +14,10 @@ const elements = document.querySelectorAll(".last-one") //querySelector só proc
 
 elements.forEach((element) => myObserver.observe(element)
 )
+
+const hamburger = document.querySelector(".hamburger")
+
+const nav = document.querySelector(".nav")
+
+hamburger.addEventListener("click", () =>
+nav.classList.toggle("active"))
