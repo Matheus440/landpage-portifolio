@@ -18,12 +18,27 @@ body {
 .eu-foto {
     border-radius: 60%;
     /* border-radius: 50% serve para deixar a imagem redonda */
-    border: 5px solid rgb(0, 0, 0);
+
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 20px;
     object-fit: cover;
+    /* serve para deixar a imagem com o tamanho certo sem esticar */
+    animation: movimento 2s ease-in-out infinite;
+    box-shadow: rgba(218, 165, 32, 0.473) 0px 0px 20px 0px;
+}
+
+@keyframes movimento {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 h1 {
@@ -81,20 +96,31 @@ h1 {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 50px;
     text-align: center;
-    font-size: 100px;
+    font-size: 50px;
 }
 
-p {
-    font-size: 20px;
-    margin-left: 20px;
+
+
+.text-one {
     font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-size: 20px;
     text-align: center;
-    padding: 70px;
+    margin-left: 20px;
+    padding: 20px;
     transform: translateY(-150px);
-    margin-top: 100px;
+    margin-top: 10px;
+
+}
+
+.txt {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 0px;
+
+    transform: translateY(-150px);
+
 }
 
 .verification {
@@ -109,12 +135,63 @@ section {
     min-height: 100vh;
 }
 
+.projetos {
+    display: flex;
+    flex-wrap: wrap;
+    /* permite quebrar linha em telas pequenas */
+    gap: 20px;
+    justify-content: space-around;
+    /* ou space-between/center conforme seu gosto */
+    padding: 20px;
+
+}
+
+.projetos img {
+    max-width: 300px;
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 0.856);
+    margin-top: 20px;
+}
+
+
+.projetos a {
+    background-color: transparent;
+    font-size: 15px;
+    border: solid 2px #fff;
+    color: #fff;
+    padding: 3px 15px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+    margin-bottom: 15px;
+    
+}
+
+.projetos a:hover {
+    background-color: goldenrod;
+    color: black;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    padding: 6px 25px;
+    box-shadow: 0 0 10px goldenrod;
+}
+
+.projetos div {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+
+
+
 .last-one {
     opacity: 0;
     filter: blur(10px);
     transform: translateX(-100%);
     transition: all 2s ease-in-out;
-
 }
 
 .play {
@@ -199,20 +276,21 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding: 10px;
+    padding: 2px;
     background-color: rgba(37, 37, 37, 0.8);
 }
 
 .nav-list {
     list-style: none;
     display: flex;
-    gap: 150px;
+    gap: 100px;
 }
 
 .logo-one {
-    max-width: 50px;
+    max-width: 40px;
     margin-left: 10px;
 }
+
 
 footer {
     position: fixed;
@@ -220,10 +298,81 @@ footer {
     left: 0;
     right: 0;
     background-color: rgba(37, 37, 37, 0.8);
-    padding: 10px;
+    padding: px;
     text-align: center;
     color: #fff;
 }
+
+#contato {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 600px;
+    height: 10px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    background-color: rgba(37, 37, 37, 0.4);
+    border-radius: 10px;
+    border: solid 1px rgba(218, 165, 32, 0.445);
+    box-shadow: 0px 0px 20px 0px rgba(218, 165, 32, 0.377);
+
+}
+
+.cx-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    gap: 20px;
+}
+
+.titulo-contato {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.campo-form {
+    height: 25px;
+    border-radius: 10px;
+    background-color: rgba(250, 245, 245, 0.918);
+    border: none;
+    padding-left: 10px;
+}
+
+.text-form {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: none;
+    background-color: rgba(250, 245, 245, 0.918);
+}
+
+.botao-contato {
+    background-color: transparent;
+    font-size: 15px;
+    border: solid 2px #fff;
+    color: #fff;
+    padding: 3px 15px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.botao-contato:hover {
+    background-color: goldenrod;
+    color: black;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    padding: 6px 25px;
+    box-shadow: 0 0 10px goldenrod;
+}
+
+
 
 @media screen and (max-width: 768px) {
     .eu-foto {
@@ -263,7 +412,7 @@ footer {
         pointer-events: none;
     }
 
-    .nav-list a{
+    .nav-list a {
         opacity: 0;
     }
 
@@ -331,6 +480,7 @@ footer {
     .nav-list li:nth-child(2) a {
         transition-delay: 400ms;
     }
+
     .nav-list li:nth-child(3) a {
         transition-delay: 800ms;
     }
